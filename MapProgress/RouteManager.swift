@@ -10,8 +10,10 @@ import Foundation
 
 class RouteManager {
     
-    func getRoute(name: NSString) {
-        return rockvale
+    init() {}
+    
+    func getRoute(name: NSString) -> Route {
+        return RouteManager.rockvale;
     }
     
     static let rockvale = Route(name: "Rockvale", points: [
