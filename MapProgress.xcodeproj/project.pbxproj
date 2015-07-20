@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		584B49551B5D95A2006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA47D1AE17A1E008ADE92 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47C1AE17A1E008ADE92 /* DetailViewController.swift */; };
@@ -14,6 +15,8 @@
 		587BA4821AE17A1E008ADE92 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 587BA4811AE17A1E008ADE92 /* Images.xcassets */; };
 		587BA4851AE17A1E008ADE92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587BA4831AE17A1E008ADE92 /* LaunchScreen.xib */; };
 		587BA4911AE17A1F008ADE92 /* MapProgressTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4901AE17A1F008ADE92 /* MapProgressTests.swift */; };
+		587BA49D1AE18521008ADE92 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA49C1AE18521008ADE92 /* Route.swift */; };
+		588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A0F4E1AEAB2180067B2DA /* WayPoint.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -38,6 +42,8 @@
 		587BA48A1AE17A1F008ADE92 /* MapProgressTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MapProgressTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA48F1AE17A1F008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4901AE17A1F008ADE92 /* MapProgressTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapProgressTests.swift; sourceTree = "<group>"; };
+		587BA49C1AE18521008ADE92 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
+		588A0F4E1AEAB2180067B2DA /* WayPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayPoint.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		584B49531B5D9591006F8A59 /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				584B49541B5D95A2006F8A59 /* Locator.swift */,
+			);
+			name = GPS;
+			sourceTree = "<group>";
+		};
 		587BA46A1AE17A1E008ADE92 = {
 			isa = PBXGroup;
 			children = (
@@ -79,12 +93,9 @@
 		587BA4751AE17A1E008ADE92 /* MapProgress */ = {
 			isa = PBXGroup;
 			children = (
-				587BA4781AE17A1E008ADE92 /* AppDelegate.swift */,
-				587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */,
-				587BA47C1AE17A1E008ADE92 /* DetailViewController.swift */,
-				587BA47E1AE17A1E008ADE92 /* Main.storyboard */,
-				587BA4811AE17A1E008ADE92 /* Images.xcassets */,
-				587BA4831AE17A1E008ADE92 /* LaunchScreen.xib */,
+				584B49531B5D9591006F8A59 /* GPS */,
+				587BA49B1AE17AD5008ADE92 /* Model */,
+				587BA49A1AE17AA2008ADE92 /* GUI */,
 				587BA4761AE17A1E008ADE92 /* Supporting Files */,
 			);
 			path = MapProgress;
@@ -113,6 +124,28 @@
 				587BA48F1AE17A1F008ADE92 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		587BA49A1AE17AA2008ADE92 /* GUI */ = {
+			isa = PBXGroup;
+			children = (
+				587BA4781AE17A1E008ADE92 /* AppDelegate.swift */,
+				587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */,
+				587BA47C1AE17A1E008ADE92 /* DetailViewController.swift */,
+				587BA47E1AE17A1E008ADE92 /* Main.storyboard */,
+				587BA4811AE17A1E008ADE92 /* Images.xcassets */,
+				587BA4831AE17A1E008ADE92 /* LaunchScreen.xib */,
+			);
+			name = GUI;
+			sourceTree = "<group>";
+		};
+		587BA49B1AE17AD5008ADE92 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				587BA49C1AE18521008ADE92 /* Route.swift */,
+				588A0F4E1AEAB2180067B2DA /* WayPoint.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -216,6 +249,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				587BA47D1AE17A1E008ADE92 /* DetailViewController.swift in Sources */,
+				588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */,
+				584B49551B5D95A2006F8A59 /* Locator.swift in Sources */,
+				587BA49D1AE18521008ADE92 /* Route.swift in Sources */,
 				587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */,
 				587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */,
 			);
@@ -413,6 +449,7 @@
 				587BA4961AE17A1F008ADE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		587BA4971AE17A1F008ADE92 /* Build configuration list for PBXNativeTarget "MapProgressTests" */ = {
 			isa = XCConfigurationList;
@@ -421,6 +458,7 @@
 				587BA4991AE17A1F008ADE92 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
