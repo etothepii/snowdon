@@ -10,8 +10,14 @@ import Foundation
 
 class WayPoint {
     
-    var northing: Double = 0.0;
-    var easting: Double = 0.0;
-    var altitude: Double = 0.0;
+    var northing: Double;
+    var easting: Double;
+    var altitude: Double;
+    
+    init(northing: Double, easting: Double, altitude:Double) {
+        self.northing = northing;
+        self.easting = easting;
+        self.altitude = altitude;
+    }
     
 }
