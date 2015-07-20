@@ -9,6 +9,6 @@
 import Foundation
 
 class Route {
-    var name: NSString;
+    var name: NSString = "";
     var points = [WayPoint]()
 }
