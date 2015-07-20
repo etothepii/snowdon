@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		584B49551B5D95A2006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
+		584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49591B5DA509006F8A59 /* RouteManager.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
+		584B49591B5DA509006F8A59 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 			name = GPS;
 			sourceTree = "<group>";
 		};
+		584B49581B5DA4EF006F8A59 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				584B49591B5DA509006F8A59 /* RouteManager.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
 		587BA46A1AE17A1E008ADE92 = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +101,7 @@
 		587BA4751AE17A1E008ADE92 /* MapProgress */ = {
 			isa = PBXGroup;
 			children = (
+				584B49581B5DA4EF006F8A59 /* Data */,
 				584B49531B5D9591006F8A59 /* GPS */,
 				587BA49B1AE17AD5008ADE92 /* Model */,
 				587BA49A1AE17AA2008ADE92 /* GUI */,
@@ -246,6 +257,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */,
+				584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */,
 				584B49551B5D95A2006F8A59 /* Locator.swift in Sources */,
 				587BA49D1AE18521008ADE92 /* Route.swift in Sources */,
 				587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */,
