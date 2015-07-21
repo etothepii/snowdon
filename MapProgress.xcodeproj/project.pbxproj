@@ -16,6 +16,8 @@
 		584B49621B5DAF8E006F8A59 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA49C1AE18521008ADE92 /* Route.swift */; };
 		584B49631B5DAFF6006F8A59 /* WayPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A0F4E1AEAB2180067B2DA /* WayPoint.swift */; };
 		584B49641B5DB009006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
+		584B49661B5EFA0B006F8A59 /* rockvale.json in Resources */ = {isa = PBXBuildFile; fileRef = 584B49651B5EFA0B006F8A59 /* rockvale.json */; };
+		584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49671B5F0240006F8A59 /* RouteDeserializer.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -41,6 +43,8 @@
 		584B49591B5DA509006F8A59 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
 		584B495E1B5DA950006F8A59 /* RouteCalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculatorTests.swift; sourceTree = "<group>"; };
+		584B49651B5EFA0B006F8A59 /* rockvale.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rockvale.json; sourceTree = "<group>"; };
+		584B49671B5F0240006F8A59 /* RouteDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDeserializer.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +89,7 @@
 			isa = PBXGroup;
 			children = (
 				584B49591B5DA509006F8A59 /* RouteManager.swift */,
+				584B49671B5F0240006F8A59 /* RouteDeserializer.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -138,6 +143,7 @@
 		587BA48D1AE17A1F008ADE92 /* MapProgressTests */ = {
 			isa = PBXGroup;
 			children = (
+				584B49651B5EFA0B006F8A59 /* rockvale.json */,
 				584B495D1B5DA93F006F8A59 /* Model */,
 				587BA4901AE17A1F008ADE92 /* MapProgressTests.swift */,
 				587BA48E1AE17A1F008ADE92 /* Supporting Files */,
@@ -265,6 +271,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584B49661B5EFA0B006F8A59 /* rockvale.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,6 +286,7 @@
 				588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */,
 				584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */,
 				584B49551B5D95A2006F8A59 /* Locator.swift in Sources */,
+				584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */,
 				587BA49D1AE18521008ADE92 /* Route.swift in Sources */,
 				587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */,
 				587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */,
