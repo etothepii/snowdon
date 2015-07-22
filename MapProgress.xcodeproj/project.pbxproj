@@ -18,6 +18,7 @@
 		584B49641B5DB009006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
 		584B49661B5EFA0B006F8A59 /* rockvale.json in Resources */ = {isa = PBXBuildFile; fileRef = 584B49651B5EFA0B006F8A59 /* rockvale.json */; };
 		584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49671B5F0240006F8A59 /* RouteDeserializer.swift */; };
+		584B496A1B5F8264006F8A59 /* RouteDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49671B5F0240006F8A59 /* RouteDeserializer.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -102,6 +103,14 @@
 			name = Model;
 			sourceTree = "<group>";
 		};
+		584B49691B5F812A006F8A59 /* TestData */ = {
+			isa = PBXGroup;
+			children = (
+				584B49651B5EFA0B006F8A59 /* rockvale.json */,
+			);
+			name = TestData;
+			sourceTree = "<group>";
+		};
 		587BA46A1AE17A1E008ADE92 = {
 			isa = PBXGroup;
 			children = (
@@ -143,7 +152,7 @@
 		587BA48D1AE17A1F008ADE92 /* MapProgressTests */ = {
 			isa = PBXGroup;
 			children = (
-				584B49651B5EFA0B006F8A59 /* rockvale.json */,
+				584B49691B5F812A006F8A59 /* TestData */,
 				584B495D1B5DA93F006F8A59 /* Model */,
 				587BA4901AE17A1F008ADE92 /* MapProgressTests.swift */,
 				587BA48E1AE17A1F008ADE92 /* Supporting Files */,
@@ -301,6 +310,7 @@
 				587BA4911AE17A1F008ADE92 /* MapProgressTests.swift in Sources */,
 				584B495F1B5DA950006F8A59 /* RouteCalculatorTests.swift in Sources */,
 				584B49601B5DAF81006F8A59 /* RouteCalculator.swift in Sources */,
+				584B496A1B5F8264006F8A59 /* RouteDeserializer.swift in Sources */,
 				584B49621B5DAF8E006F8A59 /* Route.swift in Sources */,
 				584B49631B5DAFF6006F8A59 /* WayPoint.swift in Sources */,
 				584B49611B5DAF8A006F8A59 /* RouteManager.swift in Sources */,
