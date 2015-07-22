@@ -10,15 +10,15 @@ import Foundation
 
 class Route {
     
-    var name: NSString;
+    var name: String;
     var points: [WayPoint];
     
-    init(name: NSString) {
+    init(name: String) {
         self.name = name;
         self.points = [WayPoint]();
     }
     
-    init(name: NSString, points: [WayPoint]) {
+    init(name: String, points: [WayPoint]) {
         self.name = name;
         self.points = points;
     }
