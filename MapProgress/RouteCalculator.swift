@@ -13,10 +13,18 @@ class RouteCalculator {
     init() {}
     
     func getAltitude(route: Route) -> [Double] {
-        return [Double]();
+        var altitude = [Double]();
+        for wayPoint in route.points {
+            altitude.append(0);
+        }
+        return altitude;
     }
     
     func getDistance(route: Route) -> [Double] {
-        return [Double]();
+        var distance = [Double]();
+        for wayPoint in route.points {
+            distance.append(0);
+        }
+        return distance;
     }
 }
