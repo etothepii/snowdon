@@ -19,6 +19,7 @@
 		584B49661B5EFA0B006F8A59 /* rockvale.json in Resources */ = {isa = PBXBuildFile; fileRef = 584B49651B5EFA0B006F8A59 /* rockvale.json */; };
 		584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49671B5F0240006F8A59 /* RouteDeserializer.swift */; };
 		584B496A1B5F8264006F8A59 /* RouteDeserializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49671B5F0240006F8A59 /* RouteDeserializer.swift */; };
+		584B496C1B60CEC6006F8A59 /* rockvale_results.json in Resources */ = {isa = PBXBuildFile; fileRef = 584B496B1B60CEC6006F8A59 /* rockvale_results.json */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 		584B495E1B5DA950006F8A59 /* RouteCalculatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculatorTests.swift; sourceTree = "<group>"; };
 		584B49651B5EFA0B006F8A59 /* rockvale.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rockvale.json; sourceTree = "<group>"; };
 		584B49671B5F0240006F8A59 /* RouteDeserializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteDeserializer.swift; sourceTree = "<group>"; };
+		584B496B1B60CEC6006F8A59 /* rockvale_results.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = rockvale_results.json; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 		584B49691B5F812A006F8A59 /* TestData */ = {
 			isa = PBXGroup;
 			children = (
+				584B496B1B60CEC6006F8A59 /* rockvale_results.json */,
 				584B49651B5EFA0B006F8A59 /* rockvale.json */,
 			);
 			name = TestData;
@@ -281,6 +284,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				584B49661B5EFA0B006F8A59 /* rockvale.json in Resources */,
+				584B496C1B60CEC6006F8A59 /* rockvale_results.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
