@@ -43,7 +43,7 @@ class RouteCalculatorTests: XCTestCase {
             var routeDistance = value as! Double
             routeDistances.append(routeDistance)
         }
-        altitude[distance] = routeDistances
+        altitude[name] = routeDistances
     }
     
     override func tearDown() {
