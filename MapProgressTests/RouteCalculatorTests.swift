@@ -14,6 +14,7 @@ class RouteCalculatorTests: XCTestCase {
     let routeDeserializer = RouteDeserializer()
     var routeManager: RouteManager?
     var routeCalculator: RouteCalculator?
+    var routes = [String]()
     var altitude = [String:[Double]]()
     var distance = [String:[Double]]()
     
@@ -22,13 +23,13 @@ class RouteCalculatorTests: XCTestCase {
         routeManager = RouteManager();
         routeCalculator = RouteCalculator();
         addRoute("rockvale");
-        
     }
     
     func addRoute(name: String) {
         var path = NSBundle(forClass: self.classForCoder).pathForResource(name, ofType: "json")!;
         var jsonData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!;
-        routeManager!.addRoute(routeDeserializer.deserialize(jsonData))
+        var route = routeDeserializer.deserialize(jsonData)
+        routeManager!.addRoute(route)
         path = NSBundle(forClass: self.classForCoder).pathForResource(name + "_results", ofType: "json")!;
         jsonData = NSData(contentsOfFile: path, options: .DataReadingMappedIfSafe, error: nil)!;
         var jsonResult: NSDictionary = NSJSONSerialization.JSONObjectWithData(jsonData, options: NSJSONReadingOptions.MutableContainers, error: nil) as! NSDictionary;
@@ -37,13 +38,14 @@ class RouteCalculatorTests: XCTestCase {
             var routeAltitude = value as! Double
             routeAltitudes.append(routeAltitude)
         }
-        altitude[name] = routeAltitudes
+        altitude[route.name] = routeAltitudes
         var routeDistances = [Double]()
         for value in (jsonResult["distance"] as! NSArray) {
             var routeDistance = value as! Double
             routeDistances.append(routeDistance)
         }
-        altitude[name] = routeDistances
+        altitude[route.name] = routeDistances
+        routes.append(route.name)
     }
     
     override func tearDown() {
@@ -51,14 +53,28 @@ class RouteCalculatorTests: XCTestCase {
     }
     
     func testAltitude() {
-        var rockvale = routeManager!.getRoute("Rockvale")
-        var altitude = routeCalculator!.getAltitude(rockvale)
-        XCTAssertEqual(rockvale.points.count, altitude.count, "The number of elements in the altitude list should be the same as the number in the original route")
+        for key in routes {
+            var route = routeManager!.getRoute(key)
+            var result = routeCalculator!.getAltitude(route)
+            var expected = altitude[key]!
+            XCTAssertEqual(route.points.count, expected.count, "The number of elements in the altitude list should be the same as the number in the original route")
+            for index in 0...expected.count - 1 {
+                var msg = String(format: "Value %d: %4d should equal %4d", index, result[index], expected[index])
+                XCTAssertEqualWithAccuracy(result[index], expected[index], 0.0001, msg)
+            }
+        }
     }
     
     func testDistance() {
-        var rockvale = routeManager!.getRoute("Rockvale")
-        var distance = routeCalculator!.getDistance(rockvale)
-        XCTAssertEqual(rockvale.points.count, distance.count, "The number of elements in the distance list should be the same as the number in the original route")
+        for key in routes {
+            var route = routeManager!.getRoute(key)
+            var result = routeCalculator!.getDistance(route)
+            var expected = altitude[key]!
+            XCTAssertEqual(route.points.count, expected.count, "The number of elements in the distance list should be the same as the number in the original route")
+            for index in 0...expected.count - 1 {
+                var msg = String(format: "Value %d: %4d should equal %4d", index, result[index], expected[index])
+                XCTAssertEqualWithAccuracy(result[index], expected[index], 0.0001, msg)
+            }
+        }
     }
 }
