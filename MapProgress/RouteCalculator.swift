@@ -14,8 +14,18 @@ class RouteCalculator {
     
     func getAltitude(route: Route) -> [Double] {
         var altitude = [Double]();
+        var totalAltitude: Double = 0;
+        var previousAltitude: Double? = nil;
         for wayPoint in route.points {
-            altitude.append(0);
+            var altitudeDelta: Double = 0;
+            if (previousAltitude != nil) {
+                altitudeDelta = wayPoint.altitude - previousAltitude!;
+            }
+            previousAltitude = wayPoint.altitude;
+            if (altitudeDelta > 0) {
+                totalAltitude += altitudeDelta;
+            }
+            altitude.append(totalAltitude);
         }
         return altitude;
     }
