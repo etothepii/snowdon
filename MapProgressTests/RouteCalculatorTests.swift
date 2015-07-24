@@ -44,7 +44,7 @@ class RouteCalculatorTests: XCTestCase {
             var routeDistance = value as! Double
             routeDistances.append(routeDistance)
         }
-        altitude[route.name] = routeDistances
+        distance[route.name] = routeDistances
         routes.append(route.name)
     }
     
@@ -69,7 +69,7 @@ class RouteCalculatorTests: XCTestCase {
         for key in routes {
             var route = routeManager!.getRoute(key)
             var result = routeCalculator!.getDistance(route)
-            var expected = altitude[key]!
+            var expected = distance[key]!
             XCTAssertEqual(route.points.count, expected.count, "The number of elements in the distance list should be the same as the number in the original route")
             for index in 0...expected.count - 1 {
                 var msg = String(format: "Value %d: %4d should equal %4d", index, result[index], expected[index])
