@@ -33,19 +33,11 @@ class RouteCalculator {
     func getDistance(route: Route) -> [Double] {
         var distance = [Double]();
         var totalDistance: Double = 0;
-        var previousNorthing: Double? = nil;
-        var previousEasting: Double? = nil;
-        var distanceDelta = 0;
+        var previousOSGrid: OSGrid?;
+        var distanceDelta: Double = 0;
         for wayPoint in route.points {
-            var distanceDelta: Double = 0;
-            if (previousNorthing != nil && previousEasting != nil ) {
-                distanceDelta =
-                    pow(
-                        pow((wayPoint.northing - previousNorthing!), 2.0) +
-                        pow((wayPoint.easting - previousEasting!), 2.0), 0.5);
-            }
-            previousNorthing = wayPoint.northing;
-            previousEasting = wayPoint.easting;
+            distanceDelta = wayPoint.osGrid.d(previousOSGrid);
+            previousOSGrid = wayPoint.osGrid;
             totalDistance += distanceDelta;
             distance.append(totalDistance);
         }

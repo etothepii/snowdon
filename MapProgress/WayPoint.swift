@@ -10,13 +10,11 @@ import Foundation
 
 class WayPoint {
     
-    var northing: Double;
-    var easting: Double;
-    var altitude: Double;
+    let osGrid: OSGrid;
+    let altitude: Double;
     
     init(northing: Double, easting: Double, altitude:Double) {
-        self.northing = northing;
-        self.easting = easting;
+        self.osGrid = OSGrid(northing: northing, easting: easting)
         self.altitude = altitude;
     }
     
