@@ -32,8 +32,22 @@ class RouteCalculator {
     
     func getDistance(route: Route) -> [Double] {
         var distance = [Double]();
+        var totalDistance: Double = 0;
+        var previousNorthing: Double? = nil;
+        var previousEasting: Double? = nil;
+        var distanceDelta = 0;
         for wayPoint in route.points {
-            distance.append(0);
+            var distanceDelta: Double = 0;
+            if (previousNorthing != nil && previousEasting != nil ) {
+                distanceDelta =
+                    pow(
+                        pow((wayPoint.northing - previousNorthing!), 2.0) +
+                        pow((wayPoint.easting - previousEasting!), 2.0), 0.5);
+            }
+            previousNorthing = wayPoint.northing;
+            previousEasting = wayPoint.easting;
+            totalDistance += distanceDelta;
+            distance.append(totalDistance);
         }
         return distance;
     }
