@@ -30,8 +30,13 @@ class LatLon {
         return lon;
     }
     
-    func getLongiitudeInRadians() -> Double {
+    func getLongitudeInRadians() -> Double {
         return lon / 180 * M_PI;
+    }
+    
+    func toOSGB36() -> LatLon {
+        
+        return LatLon(latitude: 0, longitude: 0)
     }
     
 }

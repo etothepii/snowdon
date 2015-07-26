@@ -26,6 +26,7 @@
 		584B49721B62CFDD006F8A59 /* LatLon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49701B62CFDD006F8A59 /* LatLon.swift */; };
 		584B49781B62D1E6006F8A59 /* OSGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49771B62D1E6006F8A59 /* OSGrid.swift */; };
 		584B49791B62D1E6006F8A59 /* OSGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49771B62D1E6006F8A59 /* OSGrid.swift */; };
+		584B497D1B637EE9006F8A59 /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497B1B637EE9006F8A59 /* TranslatorTests.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -57,6 +58,7 @@
 		584B496D1B62CE5D006F8A59 /* Translator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Translator.swift; sourceTree = "<group>"; };
 		584B49701B62CFDD006F8A59 /* LatLon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatLon.swift; sourceTree = "<group>"; };
 		584B49771B62D1E6006F8A59 /* OSGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSGrid.swift; sourceTree = "<group>"; };
+		584B497B1B637EE9006F8A59 /* TranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslatorTests.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,14 @@
 			name = TestData;
 			sourceTree = "<group>";
 		};
+		584B497A1B637ED9006F8A59 /* GPS */ = {
+			isa = PBXGroup;
+			children = (
+				584B497B1B637EE9006F8A59 /* TranslatorTests.swift */,
+			);
+			name = GPS;
+			sourceTree = "<group>";
+		};
 		587BA46A1AE17A1E008ADE92 = {
 			isa = PBXGroup;
 			children = (
@@ -166,6 +176,7 @@
 		587BA48D1AE17A1F008ADE92 /* MapProgressTests */ = {
 			isa = PBXGroup;
 			children = (
+				584B497A1B637ED9006F8A59 /* GPS */,
 				584B49691B5F812A006F8A59 /* TestData */,
 				584B495D1B5DA93F006F8A59 /* Model */,
 				587BA4901AE17A1F008ADE92 /* MapProgressTests.swift */,
@@ -326,6 +337,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				584B49641B5DB009006F8A59 /* Locator.swift in Sources */,
+				584B497D1B637EE9006F8A59 /* TranslatorTests.swift in Sources */,
 				587BA4911AE17A1F008ADE92 /* MapProgressTests.swift in Sources */,
 				584B495F1B5DA950006F8A59 /* RouteCalculatorTests.swift in Sources */,
 				584B49601B5DAF81006F8A59 /* RouteCalculator.swift in Sources */,
