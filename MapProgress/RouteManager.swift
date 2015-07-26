@@ -11,16 +11,23 @@ import Foundation
 class RouteManager {
     
     private var map: [String: Route];
+    private var routes: [String]
     
     init() {
         self.map = [String:Route]();
+        self.routes = [String]();
     }
     
     func addRoute(route: Route) {
         map[route.name] = route;
+        routes.append(route.name);
     }
     
     func getRoute(name: String) -> Route {
         return map[name]!;
+    }
+    
+    func getRoutes() -> [String] {
+        return routes;
     }
 }
