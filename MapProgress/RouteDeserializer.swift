@@ -18,8 +18,8 @@ class RouteDeserializer {
         var points = [WayPoint]()
         for point in (jsonResult["points"] as! NSArray) {
             var wayPoint = point as! NSDictionary
-            points.append(WayPoint(northing: wayPoint["northing"] as! Double,
-                easting: wayPoint["easting"] as! Double,
+            points.append(WayPoint(easting: wayPoint["easting"] as! Double,
+                northing: wayPoint["northing"] as! Double,
                 altitude: wayPoint["altitude"] as! Double));
         }
         return Route(name: name, points: points)

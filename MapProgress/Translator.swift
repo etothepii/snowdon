@@ -33,7 +33,6 @@ class Translator {
         let n = (a-b)/(a+b);                               // n
         let n2 = n*n;                                      // n²
         let n3 = n*n*n;                                    // n³
-        return OSGrid(northing: 0,easting: 0)
     
         let cosφ = cos(φ);
         let sinφ = sin(φ);
@@ -72,6 +71,6 @@ class Translator {
         N = round(1000*N)/1000;                             // round to mm precision
         E = round(1000*E)/1000;
     
-        return OSGrid(northing: N, easting: E); // gets truncated to SW corner of 1m grid square
+        return OSGrid(easting: E, northing: N); // gets truncated to SW corner of 1m grid square
     }
 }

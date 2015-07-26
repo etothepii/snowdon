@@ -13,8 +13,8 @@ class WayPoint {
     let osGrid: OSGrid;
     let altitude: Double;
     
-    init(northing: Double, easting: Double, altitude:Double) {
-        self.osGrid = OSGrid(northing: northing, easting: easting)
+    init(easting: Double, northing: Double, altitude:Double) {
+        self.osGrid = OSGrid(easting: easting, northing: northing)
         self.altitude = altitude;
     }
     

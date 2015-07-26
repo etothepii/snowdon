@@ -13,7 +13,7 @@ class OSGrid {
     let northing: Double
     let easting: Double
     
-    init(northing: Double, easting: Double) {
+    init(easting: Double, northing: Double) {
         self.northing = northing;
         self.easting = easting;
     }

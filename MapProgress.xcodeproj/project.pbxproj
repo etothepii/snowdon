@@ -27,6 +27,8 @@
 		584B49781B62D1E6006F8A59 /* OSGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49771B62D1E6006F8A59 /* OSGrid.swift */; };
 		584B49791B62D1E6006F8A59 /* OSGrid.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49771B62D1E6006F8A59 /* OSGrid.swift */; };
 		584B497D1B637EE9006F8A59 /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497B1B637EE9006F8A59 /* TranslatorTests.swift */; };
+		584B497F1B64E402006F8A59 /* CartesianPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497E1B64E402006F8A59 /* CartesianPoint.swift */; };
+		584B49801B64E402006F8A59 /* CartesianPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497E1B64E402006F8A59 /* CartesianPoint.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -59,6 +61,7 @@
 		584B49701B62CFDD006F8A59 /* LatLon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LatLon.swift; sourceTree = "<group>"; };
 		584B49771B62D1E6006F8A59 /* OSGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSGrid.swift; sourceTree = "<group>"; };
 		584B497B1B637EE9006F8A59 /* TranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslatorTests.swift; sourceTree = "<group>"; };
+		584B497E1B64E402006F8A59 /* CartesianPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartesianPoint.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -97,6 +100,7 @@
 				584B49541B5D95A2006F8A59 /* Locator.swift */,
 				584B496D1B62CE5D006F8A59 /* Translator.swift */,
 				584B49701B62CFDD006F8A59 /* LatLon.swift */,
+				584B497E1B64E402006F8A59 /* CartesianPoint.swift */,
 			);
 			name = GPS;
 			sourceTree = "<group>";
@@ -321,6 +325,7 @@
 				584B495C1B5DA8F9006F8A59 /* RouteCalculator.swift in Sources */,
 				588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */,
 				584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */,
+				584B497F1B64E402006F8A59 /* CartesianPoint.swift in Sources */,
 				584B49551B5D95A2006F8A59 /* Locator.swift in Sources */,
 				584B496E1B62CE5D006F8A59 /* Translator.swift in Sources */,
 				584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */,
@@ -336,6 +341,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				584B49801B64E402006F8A59 /* CartesianPoint.swift in Sources */,
 				584B49641B5DB009006F8A59 /* Locator.swift in Sources */,
 				584B497D1B637EE9006F8A59 /* TranslatorTests.swift in Sources */,
 				587BA4911AE17A1F008ADE92 /* MapProgressTests.swift in Sources */,
