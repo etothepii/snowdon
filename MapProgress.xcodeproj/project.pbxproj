@@ -29,6 +29,10 @@
 		584B497D1B637EE9006F8A59 /* TranslatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497B1B637EE9006F8A59 /* TranslatorTests.swift */; };
 		584B497F1B64E402006F8A59 /* CartesianPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497E1B64E402006F8A59 /* CartesianPoint.swift */; };
 		584B49801B64E402006F8A59 /* CartesianPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B497E1B64E402006F8A59 /* CartesianPoint.swift */; };
+		584B49821B64E8B6006F8A59 /* WGS84.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49811B64E8B6006F8A59 /* WGS84.swift */; };
+		584B49831B64E8B6006F8A59 /* WGS84.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49811B64E8B6006F8A59 /* WGS84.swift */; };
+		584B49851B64E94F006F8A59 /* OSGB36.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49841B64E94F006F8A59 /* OSGB36.swift */; };
+		584B49861B64E94F006F8A59 /* OSGB36.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49841B64E94F006F8A59 /* OSGB36.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -62,6 +66,8 @@
 		584B49771B62D1E6006F8A59 /* OSGrid.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSGrid.swift; sourceTree = "<group>"; };
 		584B497B1B637EE9006F8A59 /* TranslatorTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TranslatorTests.swift; sourceTree = "<group>"; };
 		584B497E1B64E402006F8A59 /* CartesianPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartesianPoint.swift; sourceTree = "<group>"; };
+		584B49811B64E8B6006F8A59 /* WGS84.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGS84.swift; sourceTree = "<group>"; };
+		584B49841B64E94F006F8A59 /* OSGB36.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSGB36.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -101,6 +107,8 @@
 				584B496D1B62CE5D006F8A59 /* Translator.swift */,
 				584B49701B62CFDD006F8A59 /* LatLon.swift */,
 				584B497E1B64E402006F8A59 /* CartesianPoint.swift */,
+				584B49811B64E8B6006F8A59 /* WGS84.swift */,
+				584B49841B64E94F006F8A59 /* OSGB36.swift */,
 			);
 			name = GPS;
 			sourceTree = "<group>";
@@ -326,12 +334,14 @@
 				588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */,
 				584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */,
 				584B497F1B64E402006F8A59 /* CartesianPoint.swift in Sources */,
+				584B49821B64E8B6006F8A59 /* WGS84.swift in Sources */,
 				584B49551B5D95A2006F8A59 /* Locator.swift in Sources */,
 				584B496E1B62CE5D006F8A59 /* Translator.swift in Sources */,
 				584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */,
 				587BA49D1AE18521008ADE92 /* Route.swift in Sources */,
 				587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */,
 				584B49781B62D1E6006F8A59 /* OSGrid.swift in Sources */,
+				584B49851B64E94F006F8A59 /* OSGB36.swift in Sources */,
 				587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */,
 				584B49711B62CFDD006F8A59 /* LatLon.swift in Sources */,
 			);
@@ -347,11 +357,13 @@
 				587BA4911AE17A1F008ADE92 /* MapProgressTests.swift in Sources */,
 				584B495F1B5DA950006F8A59 /* RouteCalculatorTests.swift in Sources */,
 				584B49601B5DAF81006F8A59 /* RouteCalculator.swift in Sources */,
+				584B49861B64E94F006F8A59 /* OSGB36.swift in Sources */,
 				584B496F1B62CE5D006F8A59 /* Translator.swift in Sources */,
 				584B496A1B5F8264006F8A59 /* RouteDeserializer.swift in Sources */,
 				584B49621B5DAF8E006F8A59 /* Route.swift in Sources */,
 				584B49631B5DAFF6006F8A59 /* WayPoint.swift in Sources */,
 				584B49791B62D1E6006F8A59 /* OSGrid.swift in Sources */,
+				584B49831B64E8B6006F8A59 /* WGS84.swift in Sources */,
 				584B49611B5DAF8A006F8A59 /* RouteManager.swift in Sources */,
 				584B49721B62CFDD006F8A59 /* LatLon.swift in Sources */,
 			);

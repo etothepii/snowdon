@@ -16,8 +16,8 @@ class Translator {
         return value / 180 * M_PI;
     }
     
-    func latLonToOsGrid(latLon: LatLon) -> OSGrid {
-        let osgb36 = latLon.toOSGB36();
+    func wgs84ToOsGrid(wgs84: WGS84) -> OSGrid {
+        let osgb36 = wgs84.toOSGB36();
     
         let φ = osgb36.getLatitudeInRadians();
         let λ = osgb36.getLongitudeInRadians();
