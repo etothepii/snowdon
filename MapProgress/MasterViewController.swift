@@ -18,7 +18,9 @@ class MasterViewController: UIViewController {
     }
 
     override func viewDidLoad() {
-        super.viewDidLoad()
+        super.viewDidLoad();
+        var applicationContext = ApplicationContext();
+        println("Application Context created");
     }
 
     override func didReceiveMemoryWarning() {

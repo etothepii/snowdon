@@ -33,6 +33,7 @@
 		584B49851B64E94F006F8A59 /* OSGB36.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49841B64E94F006F8A59 /* OSGB36.swift */; };
 		584B49861B64E94F006F8A59 /* OSGB36.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49841B64E94F006F8A59 /* OSGB36.swift */; };
 		584B49891B64FB26006F8A59 /* WGS84Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49871B64FB26006F8A59 /* WGS84Tests.swift */; };
+		584B498E1B659AD3006F8A59 /* ApplicationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B498D1B659AD3006F8A59 /* ApplicationContext.swift */; };
 		587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA4781AE17A1E008ADE92 /* AppDelegate.swift */; };
 		587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */; };
 		587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 587BA47E1AE17A1E008ADE92 /* Main.storyboard */; };
@@ -67,6 +68,7 @@
 		584B49811B64E8B6006F8A59 /* WGS84.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGS84.swift; sourceTree = "<group>"; };
 		584B49841B64E94F006F8A59 /* OSGB36.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSGB36.swift; sourceTree = "<group>"; };
 		584B49871B64FB26006F8A59 /* WGS84Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WGS84Tests.swift; sourceTree = "<group>"; };
+		584B498D1B659AD3006F8A59 /* ApplicationContext.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApplicationContext.swift; sourceTree = "<group>"; };
 		587BA4731AE17A1E008ADE92 /* MapProgress.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MapProgress.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		587BA4771AE17A1E008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA4781AE17A1E008ADE92 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				584B49591B5DA509006F8A59 /* RouteManager.swift */,
 				584B49671B5F0240006F8A59 /* RouteDeserializer.swift */,
+				584B498D1B659AD3006F8A59 /* ApplicationContext.swift */,
 			);
 			name = Data;
 			sourceTree = "<group>";
@@ -338,6 +341,7 @@
 				587BA49D1AE18521008ADE92 /* Route.swift in Sources */,
 				587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */,
 				584B49781B62D1E6006F8A59 /* OSGrid.swift in Sources */,
+				584B498E1B659AD3006F8A59 /* ApplicationContext.swift in Sources */,
 				584B49851B64E94F006F8A59 /* OSGB36.swift in Sources */,
 				587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */,
 				584B49711B62CFDD006F8A59 /* LatLon.swift in Sources */,
