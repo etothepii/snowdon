@@ -7,3 +7,7 @@
 //
 
 import Foundation
+
+protocol Locator {
+    func getCurrentLocation() -> OSGrid
+}

@@ -101,7 +101,6 @@
 		584B49531B5D9591006F8A59 /* GPS */ = {
 			isa = PBXGroup;
 			children = (
-				584B49541B5D95A2006F8A59 /* Locator.swift */,
 				584B496D1B62CE5D006F8A59 /* Translator.swift */,
 				584B49701B62CFDD006F8A59 /* LatLon.swift */,
 				584B497E1B64E402006F8A59 /* CartesianPoint.swift */,
@@ -217,6 +216,7 @@
 		587BA49B1AE17AD5008ADE92 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				584B49541B5D95A2006F8A59 /* Locator.swift */,
 				587BA49C1AE18521008ADE92 /* Route.swift */,
 				588A0F4E1AEAB2180067B2DA /* WayPoint.swift */,
 				584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */,
