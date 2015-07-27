@@ -30,4 +30,8 @@ class RouteManager {
     func getRoutes() -> [String] {
         return routes;
     }
+    
+    func getCurrentRoute() -> Route {
+        return getRoute(routes[0]);
+    }
 }
