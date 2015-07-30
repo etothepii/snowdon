@@ -9,33 +9,17 @@
             <objects>
                 <viewController title="Chart" id="i6N-tg-yBB" customClass="MasterViewController" customModule="MapProgress" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="J1L-Vo-Ewt"/>
-                        <viewControllerLayoutGuide type="bottom" id="jm3-gP-PBp"/>
+                        <viewControllerLayoutGuide type="top" id="qL7-r8-KsR"/>
+                        <viewControllerLayoutGuide type="bottom" id="oCg-nS-KyY"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8ga-DK-ykk">
+                    <view key="view" contentMode="scaleToFill" id="uxZ-N7-XSm" customClass="CPTGraphHostingView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SKN-UU-qvr">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <variation key="heightClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="400"/>
-                                </variation>
-                            </view>
-                        </subviews>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <variation key="default">
-                            <mask key="subviews">
-                                <exclude reference="SKN-UU-qvr"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact">
-                            <mask key="subviews">
-                                <include reference="SKN-UU-qvr"/>
-                            </mask>
-                        </variation>
                     </view>
+                    <connections>
+                        <outlet property="graphView" destination="uxZ-N7-XSm" id="MwM-77-TQp"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKS-PV-WRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
