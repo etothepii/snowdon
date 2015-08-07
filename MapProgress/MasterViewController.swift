@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import MapKit
 
-class MasterViewController: UIViewController, CPTPlotDataSource {
+class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManagerDelegate {
     
     @IBOutlet var graphView: CPTGraphHostingView!
     
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let routeCalculator = RouteCalculator()
+    let locationManager = CLLocationManager()
     
     var objects = [AnyObject]()
     private var graph = CPTXYGraph(frame: CGRectZero)
@@ -27,6 +29,14 @@ class MasterViewController: UIViewController, CPTPlotDataSource {
     }
 
     override func viewDidLoad() {
+        self.locationManager.requestWhenInUseAuthorization()
+
+        if CLLocationManager.locationServicesEnabled() {
+            locationManager.delegate = self
+            locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
+            locationManager.startUpdatingLocation()
+        }
+
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor();
         plotSpace = graph.defaultPlotSpace as? CPTXYPlotSpace
@@ -48,6 +58,12 @@ class MasterViewController: UIViewController, CPTPlotDataSource {
         self.graphView.hostedGraph = graph
     }
     
+    func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
+        var locValue:CLLocationCoordinate2D = manager.location.coordinate
+        let latLon = WGS84(latitude: locValue.latitude, longitude: locValue.longitude)
+        let osGrid = latLon.toOSGrid()
+    }
+
     private func updateRoute(route: Route) {
         
         // Axes
@@ -56,9 +72,9 @@ class MasterViewController: UIViewController, CPTPlotDataSource {
         lineStyle.lineWidth = 2
         axes.xAxis.axisLineStyle = lineStyle
         axes.yAxis.axisLineStyle = lineStyle
-        
-        let altitude = routeCalculator.getAltitude(route)
-        let distance = routeCalculator.getDistance(route)
+        routeCalculator.setRoute(route)
+        let altitude = routeCalculator.getAltitude()
+        let distance = routeCalculator.getDistance()
         data = [CGPoint]()
         for (var i = 0; i < altitude.count; i++) {
             data.append(CGPoint(x: distance[i], y: altitude[i]))

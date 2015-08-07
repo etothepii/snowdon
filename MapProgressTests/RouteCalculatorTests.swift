@@ -55,7 +55,8 @@ class RouteCalculatorTests: XCTestCase {
     func testAltitude() {
         for key in routes {
             var route = routeManager!.getRoute(key)
-            var result = routeCalculator!.getAltitude(route)
+            routeCalculator!.setRoute(route)
+            var result = routeCalculator!.getAltitude()
             var expected = altitude[key]!
             XCTAssertEqual(route.points.count, expected.count, "The number of elements in the altitude list should be the same as the number in the original route")
             for index in 0...expected.count - 1 {
@@ -68,7 +69,8 @@ class RouteCalculatorTests: XCTestCase {
     func testDistance() {
         for key in routes {
             var route = routeManager!.getRoute(key)
-            var result = routeCalculator!.getDistance(route)
+            routeCalculator!.setRoute(route)
+            var result = routeCalculator!.getDistance()
             var expected = distance[key]!
             XCTAssertEqual(route.points.count, expected.count, "The number of elements in the distance list should be the same as the number in the original route")
             for index in 0...expected.count - 1 {
