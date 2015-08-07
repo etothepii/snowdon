@@ -56,4 +56,8 @@ class RouteCalculator {
         }
         return distance!;
     }
+    
+    func setLocation(osGrid: OSGrid) -> Int {
+        return 0
+    }
 }

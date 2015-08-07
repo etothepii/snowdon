@@ -17,6 +17,7 @@ class RouteCalculatorTests: XCTestCase {
     var routes = [String]()
     var altitude = [String:[Double]]()
     var distance = [String:[Double]]()
+    var proximity = [String:[ProximityTest]]()
     
     override func setUp() {
         super.setUp();
@@ -45,6 +46,16 @@ class RouteCalculatorTests: XCTestCase {
             routeDistances.append(routeDistance)
         }
         distance[route.name] = routeDistances
+        var proximityTests = [ProximityTest]()
+        for value in (jsonResult["proximity"] as! NSArray) {
+            var proximityJson = value as! NSDictionary
+            var easting = proximityJson["easting"] as! Double
+            var northing = proximityJson["northing"] as! Double
+            var index = proximityJson["index"] as! Int
+            var proximityTest = ProximityTest(osGrid: OSGrid(easting: easting, northing: northing), index: index)
+            proximityTests.append(proximityTest)
+        }
+        proximity[route.name] = proximityTests
         routes.append(route.name)
     }
     
@@ -76,6 +87,19 @@ class RouteCalculatorTests: XCTestCase {
             for index in 0...expected.count - 1 {
                 var msg = String(format: "Value %d: %4d should equal %4d", index, result[index], expected[index])
                 XCTAssertEqualWithAccuracy(result[index], expected[index], 0.0001, msg)
+            }
+        }
+    }
+    
+    func testSetLocation() {
+        for key in routes {
+            var route = routeManager!.getRoute(key)
+            routeCalculator!.setRoute(route)
+            for proximityTest in proximity[key]! {
+                let result = routeCalculator!.setLocation(proximityTest.osGrid)
+                let expected = proximityTest.index
+                var msg = String(format: "Value (%d, %d): %d should equal %d", proximityTest.osGrid.easting, proximityTest.osGrid.northing, result, expected)
+                XCTAssertEqual(result, expected, msg)
             }
         }
     }

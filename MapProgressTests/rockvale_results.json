@@ -1508,5 +1508,37 @@
     1937.3573411934,
     1942.870098807,
     1949.9341192669
+  ],
+  "proximity": [
+    { 
+      "easting": 272081.5,
+      "northing": 149560.3,
+      "index": 13
+    },
+    { 
+      "easting": 423098.1,
+      "northing": 133333.33,
+      "index": 423
+    },
+    { 
+      "easting": 282200,
+      "northing": 149200,
+      "index": 495
+    },
+    { 
+      "easting": 275692.9,
+      "northing": 147711.1,
+      "index": 167
+    },
+    { 
+      "easting": 271713,
+      "northing": 149535,
+      "index": 0
+    },
+    { 
+      "easting": 271716,
+      "northing": 149535,
+      "index": 752
+    }
   ]
 }  
