@@ -21,7 +21,8 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
     private var graph = CPTXYGraph(frame: CGRectZero)
     private var plotSpace: CPTXYPlotSpace? = nil
     private var lines = [CPTScatterPlot]()
-
+    private var routeDataSource: RouteDataSource? = nil
+    private var locationDataSource: LocationDataSource? = nil
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -36,24 +37,27 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
     }
     
     override func viewDidLoad() {
+        super.viewDidLoad()
         self.locationManager.requestWhenInUseAuthorization()
-
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
         }
-
-        super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor();
         plotSpace = graph.defaultPlotSpace as? CPTXYPlotSpace
+        routeDataSource = RouteDataSource(routeCalculator: routeCalculator)
+        locationDataSource = LocationDataSource(routeCalculator: routeCalculator)
         lines.append(CPTScatterPlot(frame: CGRectZero))
         lines[0].dataLineStyle = createLineStyle(1, lineWidth: 3, lineColor: CPTColor.blueColor())
-        lines[0].dataSource = RouteDataSource(routeCalculator: routeCalculator)
+        lines[0].dataSource = routeDataSource
         graph.addPlot(lines[0], toPlotSpace: plotSpace!)
         lines.append(CPTScatterPlot(frame: CGRectZero))
-        lines[1].dataLineStyle = createLineStyle(1, lineWidth: 5, lineColor: CPTColor.redColor())
-        lines[1].dataSource = LocationDataSource(routeCalculator: routeCalculator)
+        var locationSymbol = CPTPlotSymbol.ellipsePlotSymbol()
+        locationSymbol.fill = CPTFill(color: CPTColor.redColor())
+        locationSymbol.size = CGSizeMake(6.0, 6.0)
+        lines[1].plotSymbol = locationSymbol
+        lines[1].dataSource = locationDataSource
         graph.addPlot(lines[1], toPlotSpace: plotSpace!)
         graph.paddingLeft = 5
         graph.paddingTop = 18
@@ -68,6 +72,8 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         let latLon = WGS84(latitude: locValue.latitude, longitude: locValue.longitude)
         let osGrid = latLon.toOSGrid()
         routeCalculator.setLocation(osGrid)
+        graph.reloadData()
+        self.graphView.setNeedsDisplay()
     }
 
     private func updateRoute(route: Route) {

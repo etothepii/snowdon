@@ -40,6 +40,10 @@
 			<false/>
 		</dict>
 	</dict>
+	<key>NSLocationAlwaysUsageDescription</key>
+	<string>I want to always use your location</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>I want to only use your location when in use</string>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
