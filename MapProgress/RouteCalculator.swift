@@ -26,6 +26,10 @@ class RouteCalculator {
         location = nil
     }
     
+    func getPoints() -> Int {
+        return distance!.count
+    }
+    
     private func calculateDistance() {
         distance = [Double]();
         var totalDistance: Double = 0;
@@ -64,6 +68,22 @@ class RouteCalculator {
         return distance!;
     }
     
+    func getAltitudeAt(index: Int) -> Double {
+        return altitude![index];
+    }
+    
+    func getDistanceAt(index: Int) -> Double {
+        return distance![index];
+    }
+    
+    func getCurrentAltitude() -> Double {
+        return altitude![index!];
+    }
+    
+    func getCurrentDistance() -> Double {
+        return distance![index!];
+    }
+    
     private func calculateIndexFromSeq() -> Int{
         var bestIndex: Int? = nil
         var bestDistance = 0.01
@@ -97,5 +117,9 @@ class RouteCalculator {
         location = osGrid
         calculateIndex()
         return index!
+    }
+    
+    func getIndex() -> Int? {
+        return index;
     }
 }
