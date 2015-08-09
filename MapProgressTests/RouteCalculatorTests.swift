@@ -98,7 +98,8 @@ class RouteCalculatorTests: XCTestCase {
             for proximityTest in proximity[key]! {
                 let result = routeCalculator!.setLocation(proximityTest.osGrid)
                 let expected = proximityTest.index
-                var msg = String(format: "Value (%d, %d): %d should equal %d", proximityTest.osGrid.easting, proximityTest.osGrid.northing, result, expected)
+                var msg = String(format: "Value (%f, %f): %d should equal %d",
+                    proximityTest.osGrid.easting, proximityTest.osGrid.northing, result, expected)
                 XCTAssertEqual(result, expected, msg)
             }
         }

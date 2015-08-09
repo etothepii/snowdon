@@ -10,9 +10,10 @@ import Foundation
 
 class RouteCalculator {
     
-    var route: Route? = nil
-    var distance: [Double]? = nil;
-    var altitude: [Double]? = nil;
+    private var route: Route? = nil
+    private var distance: [Double]? = nil
+    private var altitude: [Double]? = nil
+    private var index: Int? = nil
     
     init() {}
     
@@ -58,6 +59,19 @@ class RouteCalculator {
     }
     
     func setLocation(osGrid: OSGrid) -> Int {
-        return 0
+        getAltitude()
+        getDistance()
+        var points = route!.getPoints()
+        var bestIndex = 0
+        var bestDistance = points[0].osGrid.dSquared(osGrid)
+        for currentIndex in 1...points.count - 1 {
+            let distance = points[currentIndex].osGrid.dSquared(osGrid)
+            if (distance < bestDistance) {
+                bestDistance = distance
+                bestIndex = currentIndex
+            }
+        }
+        index = bestIndex
+        return index!
     }
 }

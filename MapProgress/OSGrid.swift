@@ -19,11 +19,15 @@ class OSGrid {
     }
     
     func d(other: OSGrid?) -> Double {
+        return pow(dSquared(other), 0.5)
+    }
+    
+    func dSquared(other: OSGrid?) -> Double {
         if (other == nil) {
             return 0;
         }
         return pow(
-            pow((other!.northing - northing), 2.0) +
-            pow((other!.easting - easting), 2.0), 0.5);
+            (other!.northing - northing), 2.0) +
+                pow((other!.easting - easting), 2.0);
     }
 }
