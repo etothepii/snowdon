@@ -1540,5 +1540,32 @@
       "northing": 149535,
       "index": 752
     }
+  ],
+  "proximityRoute": [
+    { 
+      "easting": 272038,
+      "northing": 149500,
+      "index": 9
+    },
+    { 
+      "easting": 272050,
+      "northing": 149550,
+      "index": 10
+    },
+    { 
+      "easting": 272050,
+      "northing": 149950,
+      "index": 11
+    },
+    { 
+      "easting": 272050,
+      "northing": 149950,
+      "index": 12
+    },
+    { 
+      "easting": 273000,
+      "northing": 149200,
+      "index": 45
+    }
   ]
 }  

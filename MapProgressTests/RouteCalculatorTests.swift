@@ -18,6 +18,7 @@ class RouteCalculatorTests: XCTestCase {
     var altitude = [String:[Double]]()
     var distance = [String:[Double]]()
     var proximity = [String:[ProximityTest]]()
+    var proximityRoute = [String:[ProximityTest]]()
     
     override func setUp() {
         super.setUp();
@@ -56,6 +57,16 @@ class RouteCalculatorTests: XCTestCase {
             proximityTests.append(proximityTest)
         }
         proximity[route.name] = proximityTests
+        var proximityRouteTests = [ProximityTest]()
+        for value in (jsonResult["proximityRoute"] as! NSArray) {
+            var proximityJson = value as! NSDictionary
+            var easting = proximityJson["easting"] as! Double
+            var northing = proximityJson["northing"] as! Double
+            var index = proximityJson["index"] as! Int
+            var proximityRouteTest = ProximityTest(osGrid: OSGrid(easting: easting, northing: northing), index: index)
+            proximityRouteTests.append(proximityRouteTest)
+        }
+        proximityRoute[route.name] = proximityRouteTests
         routes.append(route.name)
     }
     
@@ -94,8 +105,22 @@ class RouteCalculatorTests: XCTestCase {
     func testSetLocation() {
         for key in routes {
             var route = routeManager!.getRoute(key)
-            routeCalculator!.setRoute(route)
             for proximityTest in proximity[key]! {
+                routeCalculator!.setRoute(route)
+                let result = routeCalculator!.setLocation(proximityTest.osGrid)
+                let expected = proximityTest.index
+                var msg = String(format: "Value (%f, %f): %d should equal %d",
+                    proximityTest.osGrid.easting, proximityTest.osGrid.northing, result, expected)
+                XCTAssertEqual(result, expected, msg)
+            }
+        }
+    }
+    
+    func testSetLocationRoute() {
+        for key in routes {
+            var route = routeManager!.getRoute(key)
+            routeCalculator!.setRoute(route)
+            for proximityTest in proximityRoute[key]! {
                 let result = routeCalculator!.setLocation(proximityTest.osGrid)
                 let expected = proximityTest.index
                 var msg = String(format: "Value (%f, %f): %d should equal %d",
