@@ -9,7 +9,7 @@
 import UIKit
 import MapKit
 
-class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManagerDelegate {
+class MasterViewController: UIViewController, CLLocationManagerDelegate {
     
     @IBOutlet var graphView: CPTGraphHostingView!
     
@@ -19,7 +19,6 @@ class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManag
     
     var objects = [AnyObject]()
     private var graph = CPTXYGraph(frame: CGRectZero)
-    private var data = [CGPoint]()
     private var plotSpace: CPTXYPlotSpace? = nil
     private var lines = [CPTScatterPlot]()
 
@@ -28,6 +27,14 @@ class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManag
         super.awakeFromNib()
     }
 
+    private func createLineStyle(miterLimit: Int, lineWidth: Int, lineColor: CPTColor) -> CPTMutableLineStyle {
+        var lineStyle = CPTMutableLineStyle()
+        lineStyle.miterLimit = CGFloat(miterLimit)
+        lineStyle.lineWidth = CGFloat(lineWidth)
+        lineStyle.lineColor = lineColor
+        return lineStyle
+    }
+    
     override func viewDidLoad() {
         self.locationManager.requestWhenInUseAuthorization()
 
@@ -40,21 +47,19 @@ class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManag
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.whiteColor();
         plotSpace = graph.defaultPlotSpace as? CPTXYPlotSpace
-        var lineStyle = CPTMutableLineStyle()
-        lineStyle.miterLimit = CGFloat(1)
-        lineStyle.lineWidth = CGFloat(3)
-        lineStyle.lineColor = CPTColor.blueColor()
         lines.append(CPTScatterPlot(frame: CGRectZero))
-        lines[0].dataLineStyle = lineStyle
-        lines[0].dataSource = self
+        lines[0].dataLineStyle = createLineStyle(1, lineWidth: 3, lineColor: CPTColor.blueColor())
+        lines[0].dataSource = RouteDataSource(routeCalculator: routeCalculator)
         graph.addPlot(lines[0], toPlotSpace: plotSpace!)
+        lines.append(CPTScatterPlot(frame: CGRectZero))
+        lines[1].dataLineStyle = createLineStyle(1, lineWidth: 5, lineColor: CPTColor.redColor())
+        lines[1].dataSource = LocationDataSource(routeCalculator: routeCalculator)
+        graph.addPlot(lines[1], toPlotSpace: plotSpace!)
         graph.paddingLeft = 5
         graph.paddingTop = 18
         graph.paddingRight = 5
         graph.paddingBottom = 5
-        
         updateRoute(appDelegate.applicationContext.routeManager.getCurrentRoute())
-        
         self.graphView.hostedGraph = graph
     }
     
@@ -62,6 +67,7 @@ class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManag
         var locValue:CLLocationCoordinate2D = manager.location.coordinate
         let latLon = WGS84(latitude: locValue.latitude, longitude: locValue.longitude)
         let osGrid = latLon.toOSGrid()
+        routeCalculator.setLocation(osGrid)
     }
 
     private func updateRoute(route: Route) {
@@ -73,27 +79,7 @@ class MasterViewController: UIViewController, CPTPlotDataSource, CLLocationManag
         axes.xAxis.axisLineStyle = lineStyle
         axes.yAxis.axisLineStyle = lineStyle
         routeCalculator.setRoute(route)
-        let altitude = routeCalculator.getAltitude()
-        let distance = routeCalculator.getDistance()
-        data = [CGPoint]()
-        for (var i = 0; i < altitude.count; i++) {
-            data.append(CGPoint(x: distance[i], y: altitude[i]))
-        }
         plotSpace!.scaleToFitPlots(lines)
-    }
-
-    func numberOfRecordsForPlot(plot: CPTPlot!) -> UInt {
-        return UInt(data.count)
-    }
-    
-    func doubleForPlot(plot: CPTPlot!, field: UInt, recordIndex: UInt) -> Double {
-        var datum: CGPoint = data[Int(recordIndex)]
-        switch (field) {
-            case 0:
-                return Double(datum.x)
-            default:
-                return Double(datum.y)
-        }
     }
     
     override func didReceiveMemoryWarning() {
