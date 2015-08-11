@@ -28,6 +28,8 @@ class ApplicationContext {
         if (!fileManager.fileExistsAtPath(routesPath)) {
             fileManager.createDirectoryAtPath(routesPath, withIntermediateDirectories: false, attributes: nil, error: &error)
         }
+        var rockvaleShortLoop = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("RockvaleShortLoop.json")
+        fileManager.copyItemAtPath(rockvaleShortLoop, toPath: routesPath.stringByAppendingPathComponent("default_route.json"), error: nil)
         let enumerator: NSDirectoryEnumerator = fileManager.enumeratorAtPath(routesPath)!
         while let element = enumerator.nextObject() as? String {
             if element.hasSuffix("json") {

@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		47E26D443A9F58BC1150FD87 /* libPods-MapProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E46250D411AFD5322A741A /* libPods-MapProgress.a */; };
+		58468DBF1B791DDC00A6BA74 /* RockvaleShortLoop.json in Resources */ = {isa = PBXBuildFile; fileRef = 58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */; };
 		584B49551B5D95A2006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
 		584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49591B5DA509006F8A59 /* RouteManager.swift */; };
 		584B495C1B5DA8F9006F8A59 /* RouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */; };
@@ -63,6 +64,8 @@
 /* Begin PBXFileReference section */
 		313497ADACBD2A316AF2729D /* Pods-MapProgressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapProgressTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapProgressTests/Pods-MapProgressTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35E46250D411AFD5322A741A /* libPods-MapProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RockvaleShortLoop.json; sourceTree = "<group>"; };
+		58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = RockvaleShortLoop.json; path = MapProgress/RockvaleShortLoop.json; sourceTree = "<group>"; };
 		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		584B49591B5DA509006F8A59 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
@@ -183,6 +186,7 @@
 		587BA46A1AE17A1E008ADE92 = {
 			isa = PBXGroup;
 			children = (
+				58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */,
 				584B49941B66B1BB006F8A59 /* MapProgress-Bridging-Header.h */,
 				587BA4751AE17A1E008ADE92 /* MapProgress */,
 				587BA48D1AE17A1F008ADE92 /* MapProgressTests */,
@@ -216,6 +220,7 @@
 		587BA4761AE17A1E008ADE92 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */,
 				587BA4771AE17A1E008ADE92 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -330,6 +335,7 @@
 				TargetAttributes = {
 					587BA4721AE17A1E008ADE92 = {
 						CreatedOnToolsVersion = 6.3;
+						DevelopmentTeam = 3NWHP37C83;
 					};
 					587BA4891AE17A1F008ADE92 = {
 						CreatedOnToolsVersion = 6.3;
@@ -361,6 +367,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				58468DBF1B791DDC00A6BA74 /* RockvaleShortLoop.json in Resources */,
 				584B49921B6614F0006F8A59 /* RouteView.xib in Resources */,
 				587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */,
 				587BA4851AE17A1E008ADE92 /* LaunchScreen.xib in Resources */,
@@ -606,9 +613,12 @@
 			baseConfigurationReference = D3BF85B6ADACB9BC97DD3E6F /* Pods-MapProgress.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MapProgress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MapProgress-Bridging-Header.h";
 			};
 			name = Debug;
@@ -618,9 +628,12 @@
 			baseConfigurationReference = 8A7B7A07AD6E9A391805D4A2 /* Pods-MapProgress.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = MapProgress/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "MapProgress-Bridging-Header.h";
 			};
 			name = Release;
