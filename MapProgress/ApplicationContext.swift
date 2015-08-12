@@ -30,6 +30,8 @@ class ApplicationContext {
         }
         var rockvaleShortLoop = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("RockvaleShortLoop.json")
         fileManager.copyItemAtPath(rockvaleShortLoop, toPath: routesPath.stringByAppendingPathComponent("default_route.json"), error: nil)
+        var culboneLongWalk = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("culboneLongWalk.json")
+        fileManager.copyItemAtPath(culboneLongWalk, toPath: routesPath.stringByAppendingPathComponent("second_route.json"), error: nil)
         let enumerator: NSDirectoryEnumerator = fileManager.enumeratorAtPath(routesPath)!
         while let element = enumerator.nextObject() as? String {
             if element.hasSuffix("json") {
