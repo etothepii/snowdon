@@ -55,7 +55,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         lines.append(CPTScatterPlot(frame: CGRectZero))
         var locationSymbol = CPTPlotSymbol.ellipsePlotSymbol()
         locationSymbol.fill = CPTFill(color: CPTColor.redColor())
-        locationSymbol.size = CGSizeMake(6.0, 6.0)
+        locationSymbol.size = CGSizeMake(12.0, 12.0)
         lines[1].plotSymbol = locationSymbol
         lines[1].dataSource = locationDataSource
         graph.addPlot(lines[1], toPlotSpace: plotSpace!)
