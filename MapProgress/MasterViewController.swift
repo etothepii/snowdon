@@ -60,9 +60,44 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         lines[1].dataSource = locationDataSource
         graph.addPlot(lines[1], toPlotSpace: plotSpace!)
         graph.paddingLeft = 5
-        graph.paddingTop = 18
+        graph.paddingTop = 5
         graph.paddingRight = 5
         graph.paddingBottom = 5
+        graph.plotAreaFrame.paddingBottom = 32
+        graph.plotAreaFrame.paddingLeft = 48
+        // Axes
+        var axes = graph.axisSet as! CPTXYAxisSet
+        var lineStyle = CPTMutableLineStyle()
+        var textStyle = CPTMutableTextStyle()
+        var numberFormatter = NSNumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        lineStyle.lineWidth = 2
+        textStyle.color = CPTColor.blackColor()
+        axes.xAxis.labelingPolicy = CPTAxisLabelingPolicy.FixedInterval
+        axes.xAxis.labelFormatter = numberFormatter
+        axes.xAxis.axisLineStyle = lineStyle
+        axes.xAxis.title = "Distance"
+        axes.xAxis.majorIntervalLength = NSNumber(double: 5).decimalValue
+        axes.xAxis.minorTicksPerInterval = UInt(4)
+        axes.xAxis.majorTickLineStyle = lineStyle
+        axes.xAxis.majorTickLength = 5.0
+        axes.xAxis.minorTickLineStyle = lineStyle
+        axes.xAxis.minorTickLength = 2.0
+        axes.xAxis.labelTextStyle = textStyle;
+        axes.xAxis.labelFormatter = numberFormatter
+        axes.xAxis.titleOffset = 17.0
+        axes.yAxis.labelingPolicy = CPTAxisLabelingPolicy.FixedInterval
+        axes.yAxis.labelFormatter = numberFormatter
+        axes.yAxis.axisLineStyle = lineStyle
+        axes.yAxis.title = "Altitude"
+        axes.yAxis.majorIntervalLength = NSNumber(double: 200.0).decimalValue
+        axes.yAxis.minorTicksPerInterval = UInt(1)
+        axes.yAxis.majorTickLineStyle = lineStyle
+        axes.yAxis.majorTickLength = 5.0
+        axes.yAxis.minorTickLineStyle = lineStyle
+        axes.yAxis.minorTickLength = 2.0
+        axes.yAxis.labelTextStyle = textStyle;
+        axes.yAxis.titleOffset = 33.0
         updateRoute(appDelegate.applicationContext.routeManager.getCurrentRoute())
         self.graphView.hostedGraph = graph
     }
@@ -78,12 +113,6 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
 
     private func updateRoute(route: Route) {
         
-        // Axes
-        var axes = graph.axisSet as! CPTXYAxisSet
-        var lineStyle = CPTMutableLineStyle()
-        lineStyle.lineWidth = 2
-        axes.xAxis.axisLineStyle = lineStyle
-        axes.yAxis.axisLineStyle = lineStyle
         routeCalculator.setRoute(route)
         plotSpace!.scaleToFitPlots(lines)
     }

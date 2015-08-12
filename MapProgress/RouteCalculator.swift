@@ -36,7 +36,7 @@ class RouteCalculator {
         var previousOSGrid: OSGrid?;
         var distanceDelta: Double = 0;
         for wayPoint in route!.points {
-            distanceDelta = wayPoint.osGrid.d(previousOSGrid);
+            distanceDelta = wayPoint.osGrid.d(previousOSGrid) / 1609.344;
             previousOSGrid = wayPoint.osGrid;
             totalDistance += distanceDelta;
             distance!.append(totalDistance);
