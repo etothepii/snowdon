@@ -27,11 +27,19 @@ class RouteManager {
         return map[name]!;
     }
     
+    func getRoute(index: Int) -> Route {
+        return map[routes[index]]!
+    }
+    
     func getRoutes() -> [String] {
         return routes;
     }
     
     func getCurrentRoute() -> Route {
         return getRoute(routes[0]);
+    }
+    
+    func getRouteCount() -> Int {
+        return routes.count;
     }
 }
