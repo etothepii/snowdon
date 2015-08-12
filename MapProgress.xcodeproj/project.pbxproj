@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		47E26D443A9F58BC1150FD87 /* libPods-MapProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E46250D411AFD5322A741A /* libPods-MapProgress.a */; };
 		58468DBF1B791DDC00A6BA74 /* RockvaleShortLoop.json in Resources */ = {isa = PBXBuildFile; fileRef = 58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */; };
+		58468DC61B7B461900A6BA74 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */; };
+		58468DC81B7B46C900A6BA74 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */; };
 		584B49551B5D95A2006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
 		584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49591B5DA509006F8A59 /* RouteManager.swift */; };
 		584B495C1B5DA8F9006F8A59 /* RouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */; };
@@ -66,6 +68,8 @@
 		35E46250D411AFD5322A741A /* libPods-MapProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RockvaleShortLoop.json; sourceTree = "<group>"; };
 		58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = RockvaleShortLoop.json; path = MapProgress/RockvaleShortLoop.json; sourceTree = "<group>"; };
+		58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
+		58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		584B49591B5DA509006F8A59 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
@@ -248,6 +252,7 @@
 		587BA49A1AE17AA2008ADE92 /* GUI */ = {
 			isa = PBXGroup;
 			children = (
+				58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */,
 				5854586A1B77D36000C8E933 /* RouteDataSource.swift */,
 				587BA4781AE17A1E008ADE92 /* AppDelegate.swift */,
 				587BA47A1AE17A1E008ADE92 /* MasterViewController.swift */,
@@ -257,6 +262,7 @@
 				584B498F1B6608AF006F8A59 /* RouteViewController.swift */,
 				584B49911B6614F0006F8A59 /* RouteView.xib */,
 				5854586C1B77D3EF00C8E933 /* LocationDataSource.swift */,
+				58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */,
 			);
 			name = GUI;
 			sourceTree = "<group>";
@@ -463,11 +469,13 @@
 				584B49821B64E8B6006F8A59 /* WGS84.swift in Sources */,
 				584B49551B5D95A2006F8A59 /* Locator.swift in Sources */,
 				5854586B1B77D36100C8E933 /* RouteDataSource.swift in Sources */,
+				58468DC61B7B461900A6BA74 /* RouteTableViewCell.swift in Sources */,
 				584B496E1B62CE5D006F8A59 /* Translator.swift in Sources */,
 				584B49681B5F0241006F8A59 /* RouteDeserializer.swift in Sources */,
 				587BA49D1AE18521008ADE92 /* Route.swift in Sources */,
 				587BA47B1AE17A1E008ADE92 /* MasterViewController.swift in Sources */,
 				584B49781B62D1E6006F8A59 /* OSGrid.swift in Sources */,
+				58468DC81B7B46C900A6BA74 /* RouteTableViewController.swift in Sources */,
 				584B498E1B659AD3006F8A59 /* ApplicationContext.swift in Sources */,
 				584B49851B64E94F006F8A59 /* OSGB36.swift in Sources */,
 				587BA4791AE17A1E008ADE92 /* AppDelegate.swift in Sources */,
