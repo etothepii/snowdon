@@ -28,6 +28,7 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="RouteName" destination="GcE-Wg-JwH" id="2km-yr-qk5"/>
+                                    <segue destination="i6N-tg-yBB" kind="show" id="Eyz-N1-QAg"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -39,7 +40,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="haI-GO-e9E" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-202" y="-1106"/>
+            <point key="canvasLocation" x="-391" y="-1106"/>
         </scene>
         <!--Chart-->
         <scene sceneID="5Gq-pt-NxR">
@@ -60,7 +61,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yKS-PV-WRE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="457" y="-1105.5"/>
+            <point key="canvasLocation" x="389" y="-1106"/>
         </scene>
     </scenes>
 </document>

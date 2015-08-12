@@ -46,6 +46,8 @@ class RouteTableViewController: UITableViewController {
         let cell: RouteTableViewCell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier, forIndexPath: indexPath) as! RouteTableViewCell
         let route = routeManager!.getRoute(indexPath.row)
         cell.RouteName.text = route.name
+        cell.routeManager = routeManager
+        cell.internalName = route.name
         return cell
     }
     
