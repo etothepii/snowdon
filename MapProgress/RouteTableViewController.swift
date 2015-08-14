@@ -51,6 +51,16 @@ class RouteTableViewController: UITableViewController {
         return cell
     }
     
+    
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(true, animated: animated)
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.setNavigationBarHidden(false, animated: animated)
+        super.viewWillDisappear(animated)
+    }
 
     /*
     // Override to support conditional editing of the table view.

@@ -113,6 +113,16 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         return numberFormatter.stringFromNumber(NSNumber(double: 100 * current / total))! + "%, " + twoDPNumberFormatter.stringFromNumber(current)! + " / " + twoDPNumberFormatter.stringFromNumber(total)!
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.navigationController?.hidesBarsOnTap = true
+        super.viewWillAppear(animated)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        self.navigationController?.hidesBarsOnTap = false
+        super.viewWillDisappear(animated)
+    }
+    
     func updateAxesTitles() {
         var axes = graph.axisSet as! CPTXYAxisSet
         
