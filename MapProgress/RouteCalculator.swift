@@ -26,7 +26,7 @@ class RouteCalculator {
         self.route = route;
         calculateDistance()
         calculateAltitude()
-        index = nil
+        index = 0
         location = nil
     }
     
@@ -67,7 +67,7 @@ class RouteCalculator {
             if (altitudeDelta > 0) {
                 totalAltitude += altitudeDelta;
             }
-            altitude!.append(wayPoint.altitude);
+            altitude!.append(totalAltitude);
         }
         self.totalAltitude = totalAltitude
     }
@@ -81,15 +81,19 @@ class RouteCalculator {
     }
     
     func getAltitudeAt(index: Int) -> Double {
-        return altitude![index];
+        return route!.points[index].altitude;
     }
     
     func getDistanceAt(index: Int) -> Double {
         return distance![index];
     }
     
-    func getCurrentAltitude() -> Double {
+    func getCurrentCummulativeAltitude() -> Double {
         return altitude![index!];
+    }
+    
+    func getCurrentAltitude() -> Double {
+        return route!.points[index!].altitude;
     }
     
     func getCurrentDistance() -> Double {
