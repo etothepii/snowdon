@@ -17,6 +17,8 @@ class RouteCalculator {
     private var location: OSGrid? = nil
     private var totalDistance: Double? = nil
     private var totalAltitude: Double? = nil
+    private var minAltitude: Double? = nil
+    private var maxAltitude: Double? = nil
     
     init() {}
     
@@ -51,6 +53,12 @@ class RouteCalculator {
         var totalAltitude: Double = 0;
         var previousAltitude: Double? = nil;
         for wayPoint in route!.points {
+            if (minAltitude == nil || wayPoint.altitude < minAltitude) {
+                minAltitude = wayPoint.altitude
+            }
+            if (maxAltitude == nil || wayPoint.altitude > maxAltitude) {
+                maxAltitude = wayPoint.altitude
+            }
             var altitudeDelta: Double = 0;
             if (previousAltitude != nil) {
                 altitudeDelta = wayPoint.altitude - previousAltitude!;
@@ -59,7 +67,7 @@ class RouteCalculator {
             if (altitudeDelta > 0) {
                 totalAltitude += altitudeDelta;
             }
-            altitude!.append(totalAltitude);
+            altitude!.append(wayPoint.altitude);
         }
         self.totalAltitude = totalAltitude
     }
@@ -90,6 +98,14 @@ class RouteCalculator {
     
     func getTotalAltitude() -> Double {
         return totalAltitude!
+    }
+    
+    func getMinAltitude() -> Double {
+        return minAltitude!
+    }
+    
+    func getMaxAltitude() -> Double {
+        return maxAltitude!
     }
     
     func getTotalDistance() -> Double {
