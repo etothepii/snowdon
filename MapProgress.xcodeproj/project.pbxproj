@@ -11,6 +11,7 @@
 		58468DBF1B791DDC00A6BA74 /* RockvaleShortLoop.json in Resources */ = {isa = PBXBuildFile; fileRef = 58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */; };
 		58468DC61B7B461900A6BA74 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */; };
 		58468DC81B7B46C900A6BA74 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */; };
+		58468DCA1B7BFF7900A6BA74 /* culboneLongWalk.json in Resources */ = {isa = PBXBuildFile; fileRef = 58468DC91B7BFF7800A6BA74 /* culboneLongWalk.json */; };
 		584B49551B5D95A2006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
 		584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49591B5DA509006F8A59 /* RouteManager.swift */; };
 		584B495C1B5DA8F9006F8A59 /* RouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */; };
@@ -70,6 +71,7 @@
 		58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = RockvaleShortLoop.json; path = MapProgress/RockvaleShortLoop.json; sourceTree = "<group>"; };
 		58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
+		58468DC91B7BFF7800A6BA74 /* culboneLongWalk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = culboneLongWalk.json; sourceTree = "<group>"; };
 		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		584B49591B5DA509006F8A59 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
@@ -224,6 +226,7 @@
 		587BA4761AE17A1E008ADE92 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				58468DC91B7BFF7800A6BA74 /* culboneLongWalk.json */,
 				58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */,
 				587BA4771AE17A1E008ADE92 /* Info.plist */,
 			);
@@ -378,6 +381,7 @@
 				587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */,
 				587BA4851AE17A1E008ADE92 /* LaunchScreen.xib in Resources */,
 				587BA4821AE17A1E008ADE92 /* Images.xcassets in Resources */,
+				58468DCA1B7BFF7900A6BA74 /* culboneLongWalk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

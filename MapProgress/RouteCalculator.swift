@@ -15,6 +15,8 @@ class RouteCalculator {
     private var altitude: [Double]? = nil
     private var index: Int? = nil
     private var location: OSGrid? = nil
+    private var totalDistance: Double? = nil
+    private var totalAltitude: Double? = nil
     
     init() {}
     
@@ -41,6 +43,7 @@ class RouteCalculator {
             totalDistance += distanceDelta;
             distance!.append(totalDistance);
         }
+        self.totalDistance = totalDistance
     }
     
     private func calculateAltitude() {
@@ -58,6 +61,7 @@ class RouteCalculator {
             }
             altitude!.append(totalAltitude);
         }
+        self.totalAltitude = totalAltitude
     }
     
     func getAltitude() -> [Double] {
@@ -82,6 +86,14 @@ class RouteCalculator {
     
     func getCurrentDistance() -> Double {
         return distance![index!];
+    }
+    
+    func getTotalAltitude() -> Double {
+        return totalAltitude!
+    }
+    
+    func getTotalDistance() -> Double {
+        return totalDistance!
     }
     
     private func calculateIndexFromSeq() -> Int{
