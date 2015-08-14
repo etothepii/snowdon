@@ -17,6 +17,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
     let routeCalculator = RouteCalculator()
     let locationManager = CLLocationManager()
     let numberFormatter = NSNumberFormatter()
+    let twoDPNumberFormatter = NSNumberFormatter()
     
     var objects = [AnyObject]()
     private var graph = CPTXYGraph(frame: CGRectZero)
@@ -40,6 +41,9 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         numberFormatter.maximumFractionDigits = 0
+        twoDPNumberFormatter.minimumFractionDigits = 2
+        twoDPNumberFormatter.minimumIntegerDigits = 1
+        twoDPNumberFormatter.maximumFractionDigits = 2
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -61,12 +65,14 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         lines[1].plotSymbol = locationSymbol
         lines[1].dataSource = locationDataSource
         graph.addPlot(lines[1], toPlotSpace: plotSpace!)
-        graph.paddingLeft = 5
-        graph.paddingTop = 5
-        graph.paddingRight = 5
-        graph.paddingBottom = 5
-        graph.plotAreaFrame.paddingBottom = 32
+        graph.plotAreaFrame.paddingTop = 5
+        graph.plotAreaFrame.paddingRight = 5
+        graph.plotAreaFrame.paddingBottom = 37
         graph.plotAreaFrame.paddingLeft = 48
+        graph.paddingTop = 0
+        graph.paddingRight = 0
+        graph.paddingBottom = 0
+        graph.paddingLeft = 0
         // Axes
         var axes = graph.axisSet as! CPTXYAxisSet
         var lineStyle = CPTMutableLineStyle()
@@ -76,7 +82,6 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         axes.xAxis.labelingPolicy = CPTAxisLabelingPolicy.FixedInterval
         axes.xAxis.labelFormatter = numberFormatter
         axes.xAxis.axisLineStyle = lineStyle
-        axes.xAxis.title = "Distance"
         axes.xAxis.majorIntervalLength = NSNumber(double: 5).decimalValue
         axes.xAxis.minorTicksPerInterval = UInt(4)
         axes.xAxis.majorTickLineStyle = lineStyle
@@ -89,7 +94,6 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         axes.yAxis.labelingPolicy = CPTAxisLabelingPolicy.FixedInterval
         axes.yAxis.labelFormatter = numberFormatter
         axes.yAxis.axisLineStyle = lineStyle
-        axes.yAxis.title = "Altitude"
         axes.yAxis.majorIntervalLength = NSNumber(double: 200.0).decimalValue
         axes.yAxis.minorTicksPerInterval = UInt(1)
         axes.yAxis.majorTickLineStyle = lineStyle
@@ -99,7 +103,20 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         axes.yAxis.labelTextStyle = textStyle;
         axes.yAxis.titleOffset = 33.0
         updateRoute(appDelegate.applicationContext.routeManager.getCurrentRoute())
+        axes.xAxis.orthogonalCoordinateDecimal = NSNumber(double: routeCalculator.getMinAltitude()).decimalValue
         self.graphView.hostedGraph = graph
+        updateAxesTitles()
+    }
+    
+    func getProgressString(current: Double, total: Double) -> String {
+        return numberFormatter.stringFromNumber(NSNumber(double: 100 * current / total))! + "%, " + twoDPNumberFormatter.stringFromNumber(current)! + " / " + twoDPNumberFormatter.stringFromNumber(total)!
+    }
+    
+    func updateAxesTitles() {
+        var axes = graph.axisSet as! CPTXYAxisSet
+        
+        axes.yAxis.title = "Altitude (" + getProgressString(routeCalculator.getCurrentCummulativeAltitude(), total: routeCalculator.getTotalAltitude()) + ")"
+        axes.xAxis.title = "Distance (" + getProgressString(routeCalculator.getCurrentDistance(), total: routeCalculator.getTotalDistance()) + ")"
     }
     
     func locationManager(manager: CLLocationManager!, didUpdateLocations locations: [AnyObject]!) {
@@ -107,15 +124,12 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         let latLon = WGS84(latitude: locValue.latitude, longitude: locValue.longitude)
         let osGrid = latLon.toOSGrid()
         routeCalculator.setLocation(osGrid)
-        var axes = graph.axisSet as! CPTXYAxisSet
-        axes.yAxis.title = "Altitude (" + numberFormatter.stringFromNumber(NSNumber(double: 100 * routeCalculator.getCurrentAltitude() / routeCalculator.getTotalAltitude()))! + "%)"
-        axes.xAxis.title = "Distance (" + numberFormatter.stringFromNumber(NSNumber(double: 100 * routeCalculator.getCurrentDistance() / routeCalculator.getTotalDistance()))! + "%)"
+        updateAxesTitles()
         graph.reloadData()
         self.graphView.setNeedsDisplay()
     }
 
     private func updateRoute(route: Route) {
-        
         routeCalculator.setRoute(route)
         plotSpace!.scaleToFitPlots(lines)
     }
