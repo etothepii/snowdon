@@ -16,6 +16,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
     let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
     let routeCalculator = RouteCalculator()
     let locationManager = CLLocationManager()
+    let numberFormatter = NSNumberFormatter()
     
     var objects = [AnyObject]()
     private var graph = CPTXYGraph(frame: CGRectZero)
@@ -38,6 +39,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        numberFormatter.maximumFractionDigits = 0
         self.locationManager.requestWhenInUseAuthorization()
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -69,8 +71,6 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         var axes = graph.axisSet as! CPTXYAxisSet
         var lineStyle = CPTMutableLineStyle()
         var textStyle = CPTMutableTextStyle()
-        var numberFormatter = NSNumberFormatter()
-        numberFormatter.maximumFractionDigits = 0
         lineStyle.lineWidth = 2
         textStyle.color = CPTColor.blackColor()
         axes.xAxis.labelingPolicy = CPTAxisLabelingPolicy.FixedInterval
@@ -107,6 +107,9 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         let latLon = WGS84(latitude: locValue.latitude, longitude: locValue.longitude)
         let osGrid = latLon.toOSGrid()
         routeCalculator.setLocation(osGrid)
+        var axes = graph.axisSet as! CPTXYAxisSet
+        axes.yAxis.title = "Altitude (" + numberFormatter.stringFromNumber(NSNumber(double: 100 * routeCalculator.getCurrentAltitude() / routeCalculator.getTotalAltitude()))! + "%)"
+        axes.xAxis.title = "Distance (" + numberFormatter.stringFromNumber(NSNumber(double: 100 * routeCalculator.getCurrentDistance() / routeCalculator.getTotalDistance()))! + "%)"
         graph.reloadData()
         self.graphView.setNeedsDisplay()
     }
