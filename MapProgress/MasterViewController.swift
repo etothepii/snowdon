@@ -131,6 +131,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
 
     private func updateRoute(route: Route) {
         routeCalculator.setRoute(route)
+        self.navigationItem.title = route.getName()
         plotSpace!.scaleToFitPlots(lines)
     }
     
