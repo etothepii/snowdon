@@ -105,6 +105,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         updateRoute(appDelegate.applicationContext.routeManager.getCurrentRoute())
         axes.xAxis.orthogonalCoordinateDecimal = NSNumber(double: routeCalculator.getMinAltitude()).decimalValue
         self.graphView.hostedGraph = graph
+        self.navigationController?.hidesBarsOnTap = true
         updateAxesTitles()
     }
     
@@ -131,6 +132,7 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
 
     private func updateRoute(route: Route) {
         routeCalculator.setRoute(route)
+        self.navigationItem.title = route.getName()
         plotSpace!.scaleToFitPlots(lines)
     }
     
