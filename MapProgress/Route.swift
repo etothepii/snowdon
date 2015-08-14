@@ -26,4 +26,8 @@ class Route {
     func getPoints() -> [WayPoint] {
         return points
     }
+    
+    func getName() -> String {
+        return name
+    }
 }
