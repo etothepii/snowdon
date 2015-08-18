@@ -116,10 +116,10 @@ class RouteCalculator {
         return totalDistance!
     }
     
-    private func calculateIndexFromSeq() -> Int{
+    private func calculateIndexFromSeq(viableIndecies: Range<Int>) -> Int {
         var bestIndex: Int? = nil
         var bestDistance = 0.01
-        for currentIndex in 0...route!.getPoints().count - 1 {
+        for currentIndex in viableIndecies {
             let distance = route!.getPoints()[currentIndex].osGrid.dSquared(location)
             if (bestIndex == nil || distance < bestDistance) {
                 bestDistance = distance
@@ -129,8 +129,17 @@ class RouteCalculator {
         return bestIndex!
     }
     
+    private func getViableIndecies() -> Range<Int> {
+        if (index == nil) {
+            return 0...route!.getPoints().count - 1
+        }
+        else {
+            return max(0, index! - 10)...min(index! + 10, route!.getPoints().count - 1)
+        }
+    }
+    
     private func calculateIndex() {
-        var newIndex = calculateIndexFromSeq()
+        var newIndex = calculateIndexFromSeq(getViableIndecies())
         if (index == nil) {
             index = newIndex
         }
@@ -143,7 +152,7 @@ class RouteCalculator {
     }
     
     func setLocation(osGrid: OSGrid) -> Int {
-        if (location == nil || location!.dSquared(osGrid) > 250000) {
+        if (location != nil && location!.dSquared(osGrid) > 250000) {
             index = nil
         }
         location = osGrid
