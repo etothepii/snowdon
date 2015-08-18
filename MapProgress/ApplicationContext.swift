@@ -34,6 +34,8 @@ class ApplicationContext {
         fileManager.copyItemAtPath(culboneLongWalk, toPath: routesPath.stringByAppendingPathComponent("second_route.json"), error: nil)
         var day02 = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("day01.json")
         fileManager.copyItemAtPath(day02, toPath: routesPath.stringByAppendingPathComponent("fourth_route.json"), error: nil)
+        var edgbaston = NSBundle.mainBundle().resourcePath!.stringByAppendingPathComponent("edgbastonResevoir.json")
+        fileManager.copyItemAtPath(edgbaston, toPath: routesPath.stringByAppendingPathComponent("edgbastonResevoir.json"), error: nil)
         let enumerator: NSDirectoryEnumerator = fileManager.enumeratorAtPath(routesPath)!
         while let element = enumerator.nextObject() as? String {
             if element.hasSuffix("json") {
