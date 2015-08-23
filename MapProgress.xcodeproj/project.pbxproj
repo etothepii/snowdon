@@ -8,10 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		47E26D443A9F58BC1150FD87 /* libPods-MapProgress.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 35E46250D411AFD5322A741A /* libPods-MapProgress.a */; };
-		58468DBF1B791DDC00A6BA74 /* RockvaleShortLoop.json in Resources */ = {isa = PBXBuildFile; fileRef = 58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */; };
 		58468DC61B7B461900A6BA74 /* RouteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */; };
 		58468DC81B7B46C900A6BA74 /* RouteTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */; };
-		58468DCA1B7BFF7900A6BA74 /* culboneLongWalk.json in Resources */ = {isa = PBXBuildFile; fileRef = 58468DC91B7BFF7800A6BA74 /* culboneLongWalk.json */; };
 		584B49551B5D95A2006F8A59 /* Locator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49541B5D95A2006F8A59 /* Locator.swift */; };
 		584B495A1B5DA509006F8A59 /* RouteManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B49591B5DA509006F8A59 /* RouteManager.swift */; };
 		584B495C1B5DA8F9006F8A59 /* RouteCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */; };
@@ -51,8 +49,6 @@
 		587BA4851AE17A1E008ADE92 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 587BA4831AE17A1E008ADE92 /* LaunchScreen.xib */; };
 		587BA49D1AE18521008ADE92 /* Route.swift in Sources */ = {isa = PBXBuildFile; fileRef = 587BA49C1AE18521008ADE92 /* Route.swift */; };
 		588A0F4F1AEAB2180067B2DA /* WayPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 588A0F4E1AEAB2180067B2DA /* WayPoint.swift */; };
-		58AD13C01B81ED5B00E5185E /* edgbastonResevoir.json in Resources */ = {isa = PBXBuildFile; fileRef = 58AD13BF1B81ED5B00E5185E /* edgbastonResevoir.json */; };
-		58B19F7E1B7E276900729F0E /* day01.json in Resources */ = {isa = PBXBuildFile; fileRef = 58B19F7D1B7E276900729F0E /* day01.json */; };
 		EC9BDAD76D2C0AE3DBE2A500 /* libPods-MapProgressTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E17D41521F530D219C24C41A /* libPods-MapProgressTests.a */; };
 /* End PBXBuildFile section */
 
@@ -69,11 +65,9 @@
 /* Begin PBXFileReference section */
 		313497ADACBD2A316AF2729D /* Pods-MapProgressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapProgressTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapProgressTests/Pods-MapProgressTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35E46250D411AFD5322A741A /* libPods-MapProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RockvaleShortLoop.json; sourceTree = "<group>"; };
 		58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = RockvaleShortLoop.json; path = MapProgress/RockvaleShortLoop.json; sourceTree = "<group>"; };
 		58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
-		58468DC91B7BFF7800A6BA74 /* culboneLongWalk.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = culboneLongWalk.json; sourceTree = "<group>"; };
 		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
 		584B49591B5DA509006F8A59 /* RouteManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteManager.swift; sourceTree = "<group>"; };
 		584B495B1B5DA8F9006F8A59 /* RouteCalculator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteCalculator.swift; sourceTree = "<group>"; };
@@ -106,8 +100,6 @@
 		587BA48F1AE17A1F008ADE92 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		587BA49C1AE18521008ADE92 /* Route.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Route.swift; sourceTree = "<group>"; };
 		588A0F4E1AEAB2180067B2DA /* WayPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WayPoint.swift; sourceTree = "<group>"; };
-		58AD13BF1B81ED5B00E5185E /* edgbastonResevoir.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = edgbastonResevoir.json; sourceTree = "<group>"; };
-		58B19F7D1B7E276900729F0E /* day01.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = day01.json; sourceTree = "<group>"; };
 		8A7B7A07AD6E9A391805D4A2 /* Pods-MapProgress.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapProgress.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapProgress/Pods-MapProgress.release.xcconfig"; sourceTree = "<group>"; };
 		C48350BF765ADEB5724395DC /* Pods-MapProgressTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapProgressTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-MapProgressTests/Pods-MapProgressTests.release.xcconfig"; sourceTree = "<group>"; };
 		D3BF85B6ADACB9BC97DD3E6F /* Pods-MapProgress.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapProgress.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapProgress/Pods-MapProgress.debug.xcconfig"; sourceTree = "<group>"; };
@@ -230,10 +222,6 @@
 		587BA4761AE17A1E008ADE92 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				58AD13BF1B81ED5B00E5185E /* edgbastonResevoir.json */,
-				58B19F7D1B7E276900729F0E /* day01.json */,
-				58468DC91B7BFF7800A6BA74 /* culboneLongWalk.json */,
-				58468DBE1B791DDC00A6BA74 /* RockvaleShortLoop.json */,
 				587BA4771AE17A1E008ADE92 /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -382,14 +370,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				58468DBF1B791DDC00A6BA74 /* RockvaleShortLoop.json in Resources */,
-				58B19F7E1B7E276900729F0E /* day01.json in Resources */,
 				584B49921B6614F0006F8A59 /* RouteView.xib in Resources */,
 				587BA4801AE17A1E008ADE92 /* Main.storyboard in Resources */,
-				58AD13C01B81ED5B00E5185E /* edgbastonResevoir.json in Resources */,
 				587BA4851AE17A1E008ADE92 /* LaunchScreen.xib in Resources */,
 				587BA4821AE17A1E008ADE92 /* Images.xcassets in Resources */,
-				58468DCA1B7BFF7900A6BA74 /* culboneLongWalk.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
