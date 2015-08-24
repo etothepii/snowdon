@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import MapKit
 
 class RouteCalculator {
     
@@ -114,6 +115,176 @@ class RouteCalculator {
     
     func getTotalDistance() -> Double {
         return totalDistance!
+    }
+    
+    func getDistanceMajorTickLength() -> CGFloat {
+        if totalDistance! < 2.5 {
+            return 0.25
+        }
+        else if totalDistance < 5 {
+            return 0.5
+        }
+        else if totalDistance < 10 {
+            return 1
+        }
+        else if totalDistance < 20 {
+            return 2
+        }
+        else if totalDistance < 50 {
+            return 5
+        }
+        else if totalDistance < 100 {
+            return 10
+        }
+        else if totalDistance < 250 {
+            return 25
+        }
+        else if totalDistance < 500 {
+            return 50
+        }
+        else if totalDistance < 1000 {
+            return 100
+        }
+        else if totalDistance < 2000 {
+            return 200
+        }
+        else if totalDistance < 5000 {
+            return 500
+        }
+        else if totalDistance < 10000 {
+            return 1000
+        }
+        else if totalDistance < 20000 {
+            return 2000
+        }
+        else if totalDistance < 50000 {
+            return 5000
+        }
+        else {
+            return 10000
+        }
+    }
+    
+    func getDistanceMinorTickLength() -> CGFloat {
+        if totalDistance! < 2.5 {
+            return 0.05
+        }
+        else if totalDistance < 5 {
+            return 0.1
+        }
+        else if totalDistance < 10 {
+            return 0.25
+        }
+        else if totalDistance < 20 {
+            return 0.5
+        }
+        else if totalDistance < 50 {
+            return 1
+        }
+        else if totalDistance < 100 {
+            return 2
+        }
+        else if totalDistance < 250 {
+            return 5
+        }
+        else if totalDistance < 500 {
+            return 10
+        }
+        else if totalDistance < 1000 {
+            return 25
+        }
+        else if totalDistance < 2000 {
+            return 50
+        }
+        else if totalDistance < 5000 {
+            return 100
+        }
+        else if totalDistance < 10000 {
+            return 200
+        }
+        else if totalDistance < 20000 {
+            return 500
+        }
+        else if totalDistance < 50000 {
+            return 1000
+        }
+        else {
+            return 2000
+        }
+    }
+    
+    func getAltitudeMajorTickLength() -> CGFloat {
+        let altDelta = getMaxAltitude() - getMinAltitude()
+        if altDelta < 10 {
+            return 2
+        }
+        else if altDelta < 25 {
+            return 5
+        }
+        else if altDelta < 50 {
+            return 10
+        }
+        else if altDelta < 100 {
+            return 20
+        }
+        else if altDelta < 250 {
+            return 50
+        }
+        else if altDelta < 500 {
+            return 100
+        }
+        else if altDelta < 1000 {
+            return 200
+        }
+        else if altDelta < 2500 {
+            return 500
+        }
+        else if altDelta < 5000 {
+            return 1000
+        }
+        else if altDelta < 10000 {
+            return 2000
+        }
+        else {
+            return 5000
+        }
+    }
+    
+    func getAltitudeMinorTickLength() -> CGFloat {
+        let altDelta = getMaxAltitude() - getMinAltitude()
+        if altDelta < 10 {
+            return 0.5
+        }
+        else if altDelta < 25 {
+            return 1
+        }
+        else if altDelta < 50 {
+            return 2
+        }
+        else if altDelta < 100 {
+            return 5
+        }
+        else if altDelta < 250 {
+            return 10
+        }
+        else if altDelta < 500 {
+            return 20
+        }
+        else if altDelta < 1000 {
+            return 50
+        }
+        else if altDelta < 2500 {
+            return 100
+        }
+        else if altDelta < 5000 {
+            return 200
+        }
+        else if altDelta < 10000 {
+            return 500
+        }
+        else {
+            return 1000
+        }
     }
     
     private func calculateIndexFromSeq(viableIndecies: Range<Int>) -> Int {

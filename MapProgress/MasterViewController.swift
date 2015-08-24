@@ -85,9 +85,9 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         axes.xAxis.majorIntervalLength = NSNumber(double: 5).decimalValue
         axes.xAxis.minorTicksPerInterval = UInt(4)
         axes.xAxis.majorTickLineStyle = lineStyle
-        axes.xAxis.majorTickLength = 5.0
+        axes.xAxis.majorTickLength = routeCalculator.getDistanceMajorTickLength()
         axes.xAxis.minorTickLineStyle = lineStyle
-        axes.xAxis.minorTickLength = 2.0
+        axes.xAxis.minorTickLength = routeCalculator.getDistanceMinorTickLength()
         axes.xAxis.labelTextStyle = textStyle;
         axes.xAxis.labelFormatter = numberFormatter
         axes.xAxis.titleOffset = 17.0
@@ -97,9 +97,9 @@ class MasterViewController: UIViewController, CLLocationManagerDelegate {
         axes.yAxis.majorIntervalLength = NSNumber(double: 200.0).decimalValue
         axes.yAxis.minorTicksPerInterval = UInt(1)
         axes.yAxis.majorTickLineStyle = lineStyle
-        axes.yAxis.majorTickLength = 5.0
+        axes.yAxis.majorTickLength = routeCalculator.getAltitudeMajorTickLength()
         axes.yAxis.minorTickLineStyle = lineStyle
-        axes.yAxis.minorTickLength = 2.0
+        axes.yAxis.minorTickLength = routeCalculator.getAltitudeMinorTickLength()
         axes.yAxis.labelTextStyle = textStyle;
         axes.yAxis.titleOffset = 33.0
         updateRoute(appDelegate.applicationContext.routeManager.getCurrentRoute())
