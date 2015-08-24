@@ -65,7 +65,6 @@
 /* Begin PBXFileReference section */
 		313497ADACBD2A316AF2729D /* Pods-MapProgressTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MapProgressTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MapProgressTests/Pods-MapProgressTests.debug.xcconfig"; sourceTree = "<group>"; };
 		35E46250D411AFD5322A741A /* libPods-MapProgress.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-MapProgress.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; name = RockvaleShortLoop.json; path = MapProgress/RockvaleShortLoop.json; sourceTree = "<group>"; };
 		58468DC51B7B461900A6BA74 /* RouteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewCell.swift; sourceTree = "<group>"; };
 		58468DC71B7B46C900A6BA74 /* RouteTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteTableViewController.swift; sourceTree = "<group>"; };
 		584B49541B5D95A2006F8A59 /* Locator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Locator.swift; sourceTree = "<group>"; };
@@ -188,7 +187,6 @@
 		587BA46A1AE17A1E008ADE92 = {
 			isa = PBXGroup;
 			children = (
-				58468DC01B791FF600A6BA74 /* RockvaleShortLoop.json */,
 				584B49941B66B1BB006F8A59 /* MapProgress-Bridging-Header.h */,
 				587BA4751AE17A1E008ADE92 /* MapProgress */,
 				587BA48D1AE17A1F008ADE92 /* MapProgressTests */,
